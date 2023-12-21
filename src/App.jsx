@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import Game from './Components/Game'
+import "./App.css";
+import Box from './Components/Box.jsx'
 import ReactGrannysGame from './Components/ReactGrannysGame'
 
 function App() {
 
   return (
     <div className="App">
-      <ReactGrannysGame />
+      {/*<ReactGrannysGame />*/}
+      <Box />
     </div>
   );
 }
