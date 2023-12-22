@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { ScoreBoard } from './ScoreBoard';
 import Board from "./Board";
-import { ResetButton } from './ResetButton.jsx';
+import ResetButton from './ResetButton.jsx';
+
 
 
 function TicOrcToe() {
@@ -22,36 +23,42 @@ function TicOrcToe() {
     const [scores, setScores] = useState({xScore: 0, oScore: 0 });
     const [gameOver, setGameOver] = useState(false);
   
-  
-    const handleBoxClick = (boxIdx) => {
-      const updatedBoard = board.map((value, idx) => {
-        if(idx === boxIdx) {
-          return xPlaying === true ? "X" : "O";
-        } else {
-          return value;
+
+    const defineTie = () => {
+        if (!board.includes(null) && !checkWinner(board)) {
+            console.log("It's a Tie!");
+            setGameOver(true);
         }
-      })
+      };
+      
   
-      const winner = checkWinner(updatedBoard);
-  
-      if(winner) {
-        if(winner === "0") {
-          let {oScore} = scores;
-          oScore += 1;
-          setScores({...scores, oScore})
+      const handleBoxClick = (boxIdx) => {
+        const updatedBoard = board.map((value, idx) => {
+          return idx === boxIdx ? (xPlaying ? "X" : "O") : value;
+        });
+      
+        const winner = checkWinner(updatedBoard);
+      
+        if (winner) {
+          if (winner === "O") {
+            let { oScore } = scores;
+            oScore += 1;
+            setScores({ ...scores, oScore });
+          } else {
+            let { xScore } = scores;
+            xScore += 1;
+            setScores({ ...scores, xScore });
+          }
+          setGameOver(true);
+          console.log(scores);
         } else {
-          let {xScore} = scores;
-          xScore += 1;
-          setScores({...scores, xScore})
+          defineTie(); // Check for a tie when there is no winner
         }
-      }
-  
-      console.log(scores)
-  
-      setBoard(updatedBoard);
-  
-      setXplaying(!xPlaying);
-    };
+      
+        setBoard(updatedBoard);
+        setXplaying(!xPlaying);
+      };
+      
   
     const checkWinner = (board) => {
       for(let i = 0; i < WIN_CONDITION.length; i++){
