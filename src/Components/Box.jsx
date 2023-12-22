@@ -1,11 +1,14 @@
 import React from "react";
-import "./StyledComponents/Box.css"
+import "./StyledComponents/Box.css";
 
+function Box({ value, onClick }) {
+    const style = value === "X" ? "box x" : "box o";
 
-function Box() {
-    return <button className="box">
-        X
-    </button>;
+    return (
+        <button className={style} onClick={onClick}>
+            {value}
+        </button>
+    );
 }
 
 export default Box;
