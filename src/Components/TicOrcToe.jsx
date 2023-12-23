@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ScoreBoard } from './ScoreBoard';
-import Board from "./Board";
+import Board from "./Board.jsx";
 import ResetButton from './ResetButton.jsx';
 import './StyledComponents/TicOrcToe.css'
 

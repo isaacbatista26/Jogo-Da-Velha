@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import "./styledcomponents/reactgranys.css"
+import "./StyledComponents/reactgranys.css"
+
 
 const ReactGrannysGame = () => {
 

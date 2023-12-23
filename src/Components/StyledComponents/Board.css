@@ -5,11 +5,3 @@
     justify-content: center;
 }
 
-body{
-    background-color: #003605;
-    background-image: url(https://media.canva.com/1/image-resize/1/550_550_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS8xdjdZVS9NQUUyTUgxdjdZVS8xL3Auc3Zn?osig=AAAAAAAAAAAAAAAAAAAAAMpI91bYJSQxMHH-f79MWTlSI4VdtVdfioyHETkZy_gT&exp=1703301566&x-canva-quality=thumbnail_large&csig=AAAAAAAAAAAAAAAAAAAAAAZYqgbxmbWFeXQ0NlePJDEhPlD3-Sss1YCUpfQWoQ-J);
-    background-repeat: repeat, repeat;
-    background-size: 10%;
-    font-family: 'Exo 2', sans-serif;
-    font-family: 'Teko', sans-serif;
-}
