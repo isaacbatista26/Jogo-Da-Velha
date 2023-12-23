@@ -1,15 +1,18 @@
+import React from 'react';
+import "./App.css";
 import { useState } from 'react'
-import Game from './Components/Game'
+import TicOrcToe from './Components/TicOrcToe';
+import { ScoreBoard } from './Components/ScoreBoard.jsx';
 import ReactGrannysGame from './Components/ReactGrannysGame';
 
-function App() {
 
+function App() {
   return (
     <div className="App">
-      {/*<Game />*/}
-      <ReactGrannysGame />
+      <TicOrcToe />
+      {/*<ReactGrannysGame />*/}
     </div>
   );
 }
 
-export default App
+export default App;

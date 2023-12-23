@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.TicOrcToe{
+    text-align: center;
+    padding: 20px;
+}
+
+.empate{
+  color: #fff;
+  font-size: 20px;
+}
+
+.Placar{
+  border: none;
+  color: red;
+}
+
+.textoescolha{
+  color: #fff;
+}
+
+.button-X{
+  color: blue;
+}
+
+.button-O{
+  color: yellow;
+}
+
+.comecar-jogo{
+  
+}
