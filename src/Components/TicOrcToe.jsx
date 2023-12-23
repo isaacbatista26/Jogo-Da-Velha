@@ -24,13 +24,20 @@ function TicOrcToe() {
     const [gameOver, setGameOver] = useState(false);
     const [moveCount, setMoveCount] = useState(0);
     const [isTie, setIsTie] = useState(false);
+    const [showResetScore, setShowResetScore] = useState(true);
 
+    const resetScore = () => {
+      setScores({ xScore: 0, oScore: 0});
+      setShowResetScore(false);
+      resetBoard();
+    }
 
     const defineTie = () => {
         if (moveCount === 8 && !checkWinner(board)) {
             setIsTie(true);
             console.log("It's a Tie!");
             setGameOver(true);
+            setShowResetScore(true);
         }
       };
       const handleBoxClick = (boxIdx) => {
@@ -51,10 +58,9 @@ function TicOrcToe() {
             setScores({ ...scores, xScore });
           }
           setGameOver(true);
-          console.log(scores);
+          setShowResetScore(true);
         } else {
             setMoveCount(moveCount + 1);
-            console.log(moveCount);
             defineTie();
         }
       
@@ -79,10 +85,12 @@ function TicOrcToe() {
       setGameOver(false);
       setBoard(Array(9).fill(null));
       setMoveCount(0);
+      setShowResetScore(true);
     };
 
 return (
     <div className="TicOrcToe">
+      {showResetScore && <button onClick={resetScore}>Resetar Placar</button>}
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
       <ResetButton resetBoard={resetBoard} />
