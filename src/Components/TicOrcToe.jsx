@@ -22,16 +22,16 @@ function TicOrcToe() {
     const [xPlaying, setXplaying] = useState(true);
     const [scores, setScores] = useState({xScore: 0, oScore: 0 });
     const [gameOver, setGameOver] = useState(false);
-  
+    const [moveCount, setMoveCount] = useState(0);
 
     const defineTie = () => {
-        if (!board.includes(null) && !checkWinner(board)) {
+        if (moveCount === 9 && !checkWinner(board)) {
             console.log("It's a Tie!");
             setGameOver(true);
         }
+      console.log("entrei");
+
       };
-      
-  
       const handleBoxClick = (boxIdx) => {
         const updatedBoard = board.map((value, idx) => {
           return idx === boxIdx ? (xPlaying ? "X" : "O") : value;
@@ -52,7 +52,8 @@ function TicOrcToe() {
           setGameOver(true);
           console.log(scores);
         } else {
-          defineTie(); // Check for a tie when there is no winner
+            setMoveCount(moveCount + 1);
+            defineTie();
         }
       
         setBoard(updatedBoard);
@@ -73,7 +74,8 @@ function TicOrcToe() {
   
     const resetBoard = () => {
       setGameOver(false);
-      setBoard(Array(9).fill(null))
+      setBoard(Array(9).fill(null));
+      setMoveCount(0);
     };
 
 return (
