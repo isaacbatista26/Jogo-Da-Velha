@@ -30,6 +30,7 @@ function TicOrcToe() {
     const chooseSymbol = (symbol) => {
       setPlayerSymbol(symbol);
       setXplaying(symbol === 'X');
+      startGame();
     };
 
     const resetScore = () => {
@@ -112,7 +113,6 @@ function TicOrcToe() {
             <p className='textoescolha'>Player 1, escolha um símbolo:</p>
             <button className='button-X' onClick={() => chooseSymbol('X')}>X</button>
             <button className='button-O'onClick={() => chooseSymbol('O')}>O</button>
-            <button className='comecar-jogo' onClick={startGame}>Começar o Jogo</button>
           </div>
           </>
         ) : (
