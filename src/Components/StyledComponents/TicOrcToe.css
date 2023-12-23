@@ -110,3 +110,18 @@ body {
   margin: 0 auto; 
   text-decoration: none;
 }
+
+.modo-btn {
+  font-size: 20px;
+  padding: 15px 30px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.modo-btn:hover {
+  background-color: #219c52;
+}
