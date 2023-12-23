@@ -1,10 +1,22 @@
 .reset-btn {
     border: none;
     border-radius: 0.5rem;
-    background-color: rgb(0, 110, 255);
-    color: #fff;
-    font-size: 2rem;
+    background-color: #FFE117;
+    color: #003605;
+    font-size: 20px;
     padding: 0.5rem 1rem;
     margin: 2rem auto;
     display: block;
+}
+
+@keyframes piscar{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+.reset-btn:hover{
+    animation: piscar 1s infinite;
 }

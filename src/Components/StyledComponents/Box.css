@@ -1,8 +1,8 @@
 .box {
-    background-color: white;
+    background-color: #FBFDB0;
     border: none;
     border-radius: 10%;
-    box-shadow: 0px 0px 8px #888;
+    box-shadow: 0px 0px 8px white;
     width: 5rem;
     height: 5rem;
     text-align: center;
@@ -13,13 +13,18 @@
 }
 
 .x{
-    color: rgb(255, 70, 37);
+    color: #035F0F;
+    font-size: 50px;
+    font-weight: 10;
 }
 
 .o{
-    color: rgb(44, 135, 255);
+    color: #FE740D;
+    font-size: 50px;
+    font-weight: 10;
 }
 
 .box:hover {
-    box-shadow: 0px 0px 15px #888;
+    transform: scale(1.2);
+    transition: transform 1.0s ease-in-out;
 }
