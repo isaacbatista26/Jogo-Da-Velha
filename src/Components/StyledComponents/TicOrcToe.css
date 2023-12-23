@@ -1,3 +1,13 @@
+
+@keyframes piscar{
+  0%, 100%{
+      opacity: 1;
+  }
+  50%{
+      opacity: 0;
+  }
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -9,16 +19,28 @@ body {
 .TicOrcToe{
     text-align: center;
     padding: 20px;
+    font-size: 60px;
 }
 
 .empate{
   color: #fff;
-  font-size: 20px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Placar{
   border: none;
-  color: red;
+  background-color:#FFE117;
+  padding: 20px 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 200px;
+  margin-top: 250px;
+  color: #003605;
+  border-radius: 8px;
 }
 
 .textoescolha{
@@ -26,15 +48,54 @@ body {
 }
 
 .button-X{
-  color: blue;
+  color: white;
+  background:none;
+  border: none;
+  font-size: 45px;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-weight: 200px;
+  display: inline;
 }
 
+ .button-X:hover{
+  animation: piscar 1s infinite;
+  color:#FFE117;
+}
 .button-O{
-  color: yellow;
+  color: white;
+  background:none;
+  border: none;
+  font-size: 46px;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  font-weight: 250px;
+  display: inline;
+}
+.button-O:hover{
+  animation: piscar 1s infinite;
+  color:#FE740D;
 }
 
 .comecar-jogo{
-  color: red;
+  animation: piscar 1s infinite;
+  background: none;
+  border:none;
+  color: white;
+  font-weight: bold;
+  font-weight: 250px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 900px;
+  padding-top: 100px;
+}
+.comecar-jogo:hover{
+  color: #FFE117;
+  animation: none;
 }
 
 .TicOrcToe a {

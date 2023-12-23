@@ -6,7 +6,9 @@
     font-size: 20px;
     padding: 0.5rem 1rem;
     margin: 2rem auto;
-    display: block;
+    display: flex;
+    font-weight: bold;
+    font-weight: 200px;
 }
 
 @keyframes piscar{
