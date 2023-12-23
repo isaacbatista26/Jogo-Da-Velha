@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ScoreBoard } from './ScoreBoard';
 import Board from "./Board";
 import ResetButton from './ResetButton.jsx';
-
+import './StyledComponents/TicOrcToe.css'
 
 
 function TicOrcToe() {
