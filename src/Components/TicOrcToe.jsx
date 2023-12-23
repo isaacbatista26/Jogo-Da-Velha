@@ -25,11 +25,27 @@ function TicOrcToe() {
     const [moveCount, setMoveCount] = useState(0);
     const [isTie, setIsTie] = useState(false);
     const [showResetScore, setShowResetScore] = useState(true);
+    const [playerSymbol, setPlayerSymbol] = useState('X');
+
+    const chooseSymbol = (symbol) => {
+      setPlayerSymbol(symbol);
+      setXplaying(symbol === 'X');
+    };
 
     const resetScore = () => {
       setScores({ xScore: 0, oScore: 0});
       setShowResetScore(false);
       resetBoard();
+    };
+
+    const startGame = () => {
+      setBoard(Array(9).fill(null));
+      setMoveCount(0);
+      setGameOver(false);
+      setIsTie(false);
+      setScores({ xScore: 0, oScore: 0 });
+      setShowResetScore(false);
+      setPlayerSymbol(null);
     }
 
     const defineTie = () => {
@@ -88,14 +104,27 @@ function TicOrcToe() {
       setShowResetScore(true);
     };
 
-return (
-    <div className="TicOrcToe">
-      {showResetScore && <button onClick={resetScore}>Resetar Placar</button>}
-      <ScoreBoard scores={scores} xPlaying={xPlaying} />
-      <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
-      <ResetButton resetBoard={resetBoard} />
-      {isTie && <p className='empate'>Empate!!</p>}
-    </div>
-  );
+    return (
+      <div className="TicOrcToe">
+        {playerSymbol ? (
+          <>
+          <div>
+            <p className='textoescolha'>Player 1, escolha um símbolo:</p>
+            <button className='button-X' onClick={() => chooseSymbol('X')}>X</button>
+            <button className='button-O'onClick={() => chooseSymbol('O')}>O</button>
+            <button className='comecar-jogo' onClick={startGame}>Começar o Jogo</button>
+          </div>
+          </>
+        ) : (
+          <div>
+            {showResetScore && <button className='Placar' onClick={resetScore}>Resetar Placar</button>}
+            <ScoreBoard scores={scores} xPlaying={xPlaying} />
+            <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
+            <ResetButton resetBoard={resetBoard} />
+            {isTie && <p className='empate'>Empate!!</p>}
+          </div>
+        )}
+      </div>
+    );
 }
 export default TicOrcToe;
