@@ -56,25 +56,19 @@ body {
     justify-content: center;
 }
 
-.interface button{
+.interface a{
     background: none;
     border: none;
     padding: 0 30px;
-}
-
-.interface button a{
     font-family: 'Teko', sans-serif;
     color: white;
     font-size: 35px;
     text-decoration: none;
 }
 
-.interface button a:hover{
+.interface a:hover{
     transition: 0.5s ease-in-out;
     color: #FFE117;
-}
-
-.interface button:hover{
     transform: scale(1.1);
     transition: 0.5s ease-in-out;
 }

@@ -36,3 +36,16 @@ body {
 .comecar-jogo{
   color: red;
 }
+
+.TicOrcToe a {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #FFE117;
+  color: #003605;
+  font-size: 20px;
+  width: 100px;
+  padding: 1px 1px;
+  display: block;
+  margin: 0 auto; 
+  text-decoration: none;
+}

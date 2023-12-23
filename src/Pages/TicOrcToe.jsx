@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ScoreBoard } from './ScoreBoard';
-import Board from "./Board.jsx";
-import ResetButton from './ResetButton.jsx';
-import './StyledComponents/TicOrcToe.css'
-
+import { ScoreBoard } from '../Components/ScoreBoard.jsx';
+import Board from "../Components/Board.jsx";
+import ResetButton from '../Components/ResetButton.jsx';
+import '../Components/StyledComponents/TicOrcToe.css'
+import { Link } from 'react-router-dom';
 
 function TicOrcToe() {
 
@@ -121,6 +121,7 @@ function TicOrcToe() {
             <ScoreBoard scores={scores} xPlaying={xPlaying} />
             <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
             <ResetButton resetBoard={resetBoard} />
+            <a><Link to="/">Voltar</Link></a>
             {isTie && <p className='empate'>Empate!!</p>}
           </div>
         )}

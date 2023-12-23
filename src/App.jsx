@@ -1,17 +1,18 @@
 import React from 'react';
 import "./App.css";
 import { useState } from 'react'
-import TicOrcToe from './Components/TicOrcToe';
-import { ScoreBoard } from './Components/ScoreBoard.jsx';
-import ReactGrannysGame from './Components/ReactGrannysGame';
-
+import TicOrcToe from './Pages/TicOrcToe.jsx';
+import ReactGrannysGame from './Pages/ReactGrannysGame.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <TicOrcToe />
-      {/*<ReactGrannysGame />*/}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ReactGrannysGame />} />
+        <Route path="/orctoe" element={<TicOrcToe />} />
+      </Routes>
+    </Router>
   );
 }
 
