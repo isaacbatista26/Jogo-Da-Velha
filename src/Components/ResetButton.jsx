@@ -3,7 +3,7 @@ import "./StyledComponents/ResetButton.css";
 
 const ResetButton = ({resetBoard}) => {
     return (
-        <button className="reset-btn" onClick={resetBoard}>Reset</button>
+        <button className="reset-btn" onClick={resetBoard}>Reiniciar Board</button>
     );
 }
 

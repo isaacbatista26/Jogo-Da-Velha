@@ -117,11 +117,11 @@ function TicOrcToe() {
           </>
         ) : (
           <div>
-            {showResetScore && <button className='Placar' onClick={resetScore}>Resetar Placar</button>}
+            {showResetScore && <button className='Placar' onClick={resetScore}>Reiniciar Placar</button>}
             <ScoreBoard scores={scores} xPlaying={xPlaying} />
             <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />
             <ResetButton resetBoard={resetBoard} />
-            <a><Link to="/">Voltar</Link></a>
+            <a><Link to="/">Tela Inicial</Link></a>
             {isTie && <p className='empate'>Empate!!</p>}
           </div>
         )}
